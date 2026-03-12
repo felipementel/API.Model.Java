@@ -1,0 +1,18 @@
+# Maven build output
+target/
+
+# JVM crash logs
+hs_err_pid*
+replay_pid*
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code Java workspace metadata
+.factorypath
