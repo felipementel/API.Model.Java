@@ -23,7 +23,7 @@ RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 WORKDIR /app
 
-COPY --from=build /app/target/usuarios-api-java-0.1.0.jar app.jar
+COPY --from=build /app/target/*.jar app.jar
 
 RUN chown appuser:appgroup app.jar
 
