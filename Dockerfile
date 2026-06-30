@@ -19,6 +19,9 @@ FROM eclipse-temurin:21-jre-alpine AS runtime
 LABEL maintainer="felipementel" \
       description="CRUD de usuarios em Spring Boot com Ports and Adapters"
 
+# Upgrade OS packages to pick up security patches (e.g. p11-kit CVE-2026-2100)
+RUN apk update && apk upgrade --no-cache
+
 RUN addgroup -S appgroup && adduser -S appuser -G appgroup
 
 WORKDIR /app

@@ -1,0 +1,39 @@
+# =============================================================================
+# Trivy License Ignore Rules — API.Model.Java
+# =============================================================================
+#
+# jakarta.annotation:jakarta.annotation-api
+# -----------------------------------------
+# This Jakarta EE Annotations API is a mandatory transitive dependency of
+# Spring Framework and cannot be excluded from the classpath.
+#
+# The package uses a standard Eclipse Foundation dual-license model:
+#
+#   EPL-2.0 (Eclipse Public License 2.0)
+#     Classification: reciprocal — requires sharing modifications to the
+#     library itself, but does NOT affect proprietary applications that
+#     merely link against it.
+#
+#   GPL-2.0-with-classpath-exception
+#     Classification: restricted — however, the Classpath Exception explicitly
+#     grants permission to link this library into any work (including
+#     proprietary/commercial software) without triggering the GPL copyleft
+#     obligations on the larger work. This is the standard mechanism used
+#     by all Jakarta EE / Java SE APIs (formerly javax.*).
+#
+# This dual-license pattern applies to ALL versions of jakarta.annotation-api
+# from 2.0.0 onwards and cannot be resolved by a version upgrade.
+# The GPL-2.0-with-classpath-exception here poses NO legal risk for typical
+# Spring Boot application development or deployment.
+#
+# Reference: https://projects.eclipse.org/projects/ee4j.ca
+# =============================================================================
+
+licenses:
+  - id: EPL-2.0
+    packages:
+      - name: jakarta.annotation:jakarta.annotation-api
+
+  - id: GPL-2.0-with-classpath-exception
+    packages:
+      - name: jakarta.annotation:jakarta.annotation-api

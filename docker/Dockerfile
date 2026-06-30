@@ -10,7 +10,9 @@ COPY mvnw .
 COPY .mvn .mvn
 COPY pom.xml .
 
-RUN chmod +x mvnw && \
+# Strip Windows CRLF line endings from mvnw (safe no-op if already LF)
+RUN sed -i 's/\r$//' mvnw && \
+    chmod +x mvnw && \
     ./mvnw dependency:go-offline -B
 
 # ──────────────────────────────────────────────────────────────
