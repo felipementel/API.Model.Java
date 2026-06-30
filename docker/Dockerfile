@@ -46,6 +46,8 @@ RUN java -Djarmode=tools -jar app.jar extract \
 # ──────────────────────────────────────────────────────────────
 FROM eclipse-temurin:21-jre-alpine AS runtime
 
+RUN apk update && apk upgrade --no-cache
+
 RUN addgroup -S appgroup && \
     adduser -S appuser -G appgroup
 
