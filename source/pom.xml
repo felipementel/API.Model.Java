@@ -85,7 +85,40 @@
                             <goal>build-info</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>pre-integration-test</id>
+                        <phase>pre-integration-test</phase>
+                        <goals>
+                            <goal>start</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>post-integration-test</id>
+                        <phase>post-integration-test</phase>
+                        <goals>
+                            <goal>stop</goal>
+                        </goals>
+                    </execution>
                 </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-maven-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>generate-openapi</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <apiDocsUrl>http://localhost:8080/openapi</apiDocsUrl>
+                    <outputDir>${project.build.directory}/open-api</outputDir>
+                    <outputFileName>openapi.json</outputFileName>
+                </configuration>
             </plugin>
         </plugins>
     </build>
