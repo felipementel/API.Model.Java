@@ -140,6 +140,14 @@ java -jar .\target\usuarios-api-java-0.1.0.jar
 .\mvnw.cmd -s .\settings-public.xml test
 ```
 
+## Pre-checks antes do commit
+
+Na raiz do repositorio, execute a verificacao de vulnerabilidades com Trivy:
+
+```powershell
+trivy fs --scanners vuln --format table --dependency-tree .
+```
+
 O CI tambem executa `./mvnw -B verify`.
 
 ## Endpoints
